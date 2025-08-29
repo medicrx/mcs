@@ -3,7 +3,7 @@ layout: post
 title: Antibiotiques
 author: nairolf32
 date: 2024-01-10 09:52:00 +0100
-categories: Infectiologie
+categories: Thérapeutique
 refs: cours FSS-UAC "Bactériologie Médicale" (2021) Prof. Dissou AFFOLABI
 permalink: /antibiotiques/
 ---

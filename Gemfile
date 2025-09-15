@@ -32,7 +32,6 @@ group :jekyll_plugins do
   gem "premonition"
   gem "jekyll-target-blank"
   gem "jekyll-github-metadata"
-
   #gem "jekyll_picture_tag"
 end
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

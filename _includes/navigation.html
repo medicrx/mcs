@@ -1,71 +1,48 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: 'fr' }}">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title | default: 'My Site' }}</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ '/assets/css/style.scss?v=' | append: site.github.build_revision | relative_url }}">
-</head>
-
-<body>
-    <!-- Use any element to open the sidenav -->
-    <a class="btn" onclick="toggleNav()">Menu</a>
-    <nav id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-        <ul>
-            {% assign links = site.data.navigation %}
-            {% for link in links %}
-            {% assign class = nil %}
-            {% if page.url contains link.url %}
-            {% assign class = 'active' %}
-            {% endif %}
-            {% if link.sublinks %}
-            <li class="dropdown {{ class }}">
-                <a href="javascript:void(0)" class="dropdown-toggle" onclick="toggleDropdown(this)">
-                    {{ link.title }}
-                    <span id="caret" class="fa fa-caret-down"></span>
-                </a>
-                <ul class="dropdown-menu">
-                    {% for sublink in link.sublinks %}
-                    <li class="ddm">
-                        <a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </li>
-            {% else %}
-            <li class="{{ class }}">
-                <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
-            </li>
-            {% endif %}
-            {% endfor %}
+<div>
+  <!-- Use any element to open the sidenav -->
+  <a
+    class="btn"
+    onclick="toggleNav()"
+    >Menu</a
+  >
+  <nav
+    id="mySidenav"
+    class="sidenav">
+    <a
+      href="javascript:void(0)"
+      class="closebtn"
+      onclick="toggleNav()"
+      >&times;</a
+    >
+    <ul>
+      {% assign links = site.data.navigation %} {% for link in links %} {%
+      assign class = nil %} {% if page.url contains link.url %} {% assign class
+      = 'active' %} {% endif %} {% if link.sublinks %}
+      <li class="dropdown {{ class }}">
+        <a
+          href="javascript:void(0)"
+          class="dropdown-toggle"
+          onclick="toggleDropdown(this)">
+          {{ link.title }}
+          <span
+            id="caret"
+            class="fa fa-caret-down"></span>
+        </a>
+        <ul class="dropdown-menu">
+          {% for sublink in link.sublinks %}
+          <li class="ddm">
+            <a href="{{ site.baseurl }}{{ sublink.url }}"
+              >{{ sublink.title }}</a
+            >
+          </li>
+          {% endfor %}
         </ul>
-    </nav>
-
-    <script>
-        function toggleNav() {
-            var sidenav = document.getElementById("mySidenav");
-            sidenav.style.width = sidenav.style.width === "330px" ? "0" : "330px";
-        }
-
-        function toggleDropdown(link) {
-            var dropdown = link.nextElementSibling;
-            var caret = link.querySelector('#caret');
-
-            if (dropdown.style.display === "none" || !dropdown.style.display) {
-                dropdown.style.display = "block";
-                caret.classList.remove('fa-caret-down');
-                caret.classList.add('fa-caret-up');
-            } else {
-                dropdown.style.display = "none";
-                caret.classList.remove('fa-caret-up');
-                caret.classList.add('fa-caret-down');
-            }
-        }
-    </script>
-</body>
-
-</html>
+      </li>
+      {% else %}
+      <li class="{{ class }}">
+        <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+      </li>
+      {% endif %} {% endfor %}
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,28 @@
+<header
+  class="page-header"
+  role="banner">
+  <div class="wrapper">
+    <img
+      class="logo"
+      width="100"
+      height="100"
+      src="{{ '/assets/images/MCS.png?v=' | append: site.github.build_revision | relative_url }}"
+      alt="MCS-logo" />
+    <h2 class="project-name">
+      {{ page.title | default: site.title | default: site.github.repository_name
+      }}
+    </h2>
+  </div>
+  <h3 class="project-tagline">
+    ({{ page.content | number_of_words }} mots) publié le {{ page.date | date:
+    "%d/%m/%Y" }} par {{ page.author }}
+  </h3>
+
+  {% include navigation.html %}
+
+  <a
+    href="{{ site.baseurl }}{% link cheatsheets.markdown %}"
+    class="btn"
+    >Tous les articles</a
+  >
+</header>

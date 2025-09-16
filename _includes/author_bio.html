@@ -1,97 +1,60 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: " fr" }}">
+<div>
+  {% assign author = site.data.authors[page.author] %}
+  <h3>Auteur:</h3>
 
-<head>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ '/assets/css/style.scss?v=' | append: site.github.build_revision | relative_url }}">
-</head>
+  {% if author.name %}
+  <p>{{author.name}}</p>
+  {% else %}
+  <p>Auteur anonyme</p>
+  {% endif %}
 
-<body>
-    {% assign author = site.data.authors[page.author] %}
-    <h3>Auteur: </h3>
-
-    {% if author.name %}
-    <p> {{author.name}} </p>
-    {% else %}
-    <p> Auteur anonyme </p>
-    {% endif %}
-
-    <div class="author">
-        {% if author.image %}
-        <img src="{{author.image}}" class="avatar" alt="avatar">&nbsp;
-        {% else %}
-        <img src="{{'/assets/images/anon.png?v=' | append: site.github.build_revision | relative_url}}" class="avatar"
-            alt="avatar">&nbsp;
+  <div class="author">
+    {% if author.image %}
+    <img
+      src="{{author.image}}"
+      class="avatar"
+      alt="avatar" />&nbsp; {% else %}
+    <img
+      src="{{'/assets/images/anon.png?v=' | append: site.github.build_revision | relative_url}}"
+      class="avatar"
+      alt="avatar" />&nbsp; {% endif %}
+    <div class="bio">
+      {% if author.bio %}
+      <p>{{ author.bio }}</p>
+      {% else %}
+      <p>Aucune bio fournie</p>
+      {% endif %}
+      <div class="icons">
+        {% if author.github %}
+        <a href="https://github.com/{{author.github}}">
+          <img
+            class="icon"
+            src="{{ '/assets/images/github_icon.png?v=' | append: site.github.build_revision | relative_url }}"
+            alt="github_icon"
+        /></a>
+        {% endif %} {% if author.email %}
+        <a href="mailto:{{author.email}}">
+          <img
+            class="icon"
+            src="{{ '/assets/images/mail_icon.png?v=' | append: site.github.build_revision | relative_url }}"
+            alt="mail_icon"
+        /></a>
+        {% endif %} {% if author.twitter %}
+        <a href="https://twitter.com/{{author.twitter}}">
+          <img
+            class="icon"
+            src="{{ '/assets/images/twitter_icon.png?v=' | append: site.github.build_revision | relative_url }}"
+            alt="twitter_icon"
+        /></a>
+        {% endif %} {% if author.tel %}
+        <a href="https://wa.me/{{author.tel}}">
+          <img
+            class="icon"
+            src="{{ '/assets/images/whatsapp_icon.png?v=' | append: site.github.build_revision | relative_url }}"
+            alt="whatsapp_icon"
+        /></a>
         {% endif %}
-        <div class="bio">
-            {% if author.bio %}
-            <p> {{ author.bio }}</p>
-            {% else %}
-            <p> Aucune bio fournie </p>
-            {% endif %}
-            <div class="icons">
-                {% if author.github %}
-                <a href="https://github.com/{{author.github}}">
-                    <img class="icon"
-                        src="{{ '/assets/images/github_icon.png?v=' | append: site.github.build_revision | relative_url }}"
-                        alt="github_icon"></a>
-                {% endif %}
-
-                {% if author.email %}
-                <a href="mailto:{{author.email}}">
-                    <img class="icon"
-                        src="{{ '/assets/images/mail_icon.png?v=' | append: site.github.build_revision | relative_url }}"
-                        alt="mail_icon"></a>
-                {% endif %}
-
-                {% if author.twitter %}
-                <a href="https://twitter.com/{{author.twitter}}">
-                    <img class="icon"
-                        src="{{ '/assets/images/twitter_icon.png?v=' | append: site.github.build_revision | relative_url }}"
-                        alt="twitter_icon"></a>
-                {% endif %}
-
-                {% if author.tel %}
-                <a href="https://wa.me/{{author.tel}}">
-                    <img class="icon"
-                        src="{{ '/assets/images/whatsapp_icon.png?v=' | append: site.github.build_revision | relative_url }}"
-                        alt="whatsapp_icon"></a>
-                {% endif %}
-            </div>
-        </div>
+      </div>
     </div>
-
-
-
-
-    <style>
-        .author {
-            display: flex;
-            margin-bottom: 2%;
-        }
-
-        .avatar {
-            border-radius: 50%;
-            border: 3px black solid;
-            height: 80px;
-            width: 80px;
-        }
-
-        .icons {
-            display: flex;
-        }
-
-        .icon {
-            margin-left: 5px;
-            height: 30px;
-            width: 30px;
-        }
-
-        .bio {
-            display: block;
-            margin-left: 3%;
-            margin-top: 0;
-        }
-    </style>
-</body>
+  </div>
+</div>

@@ -1,26 +1,7 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <head>
-        <!--lmao wtf is this? fixing it breaks everything. TODO:FIX-->
-
-    <body>
-        <input type="search" id="myInput" onkeyup="searchFunction()" placeholder="Cherchez un article..">
-        <script>
-            function searchFunction() {
-                var input = document.getElementById('myInput'),
-                    filter = input.value.toUpperCase(),
-                    //TODO: fix the selection for better search results display
-                    li = document.querySelectorAll(".ul li");
-                // Loop through all list items, and hide those who don't match the search query
-                for (var i = 0; i < li.length; i++) {
-                    var a = li[i].querySelector("a");
-                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        li[i].style.display = "block";
-                    } else {
-                        li[i].style.display = "none";
-                    }
-                }
-            }
-        </script>
-    </body>
+<div>
+  <input
+    type="search"
+    id="myInput"
+    onkeyup="searchFunction()"
+    placeholder="Cherchez un article.." />
+</div>

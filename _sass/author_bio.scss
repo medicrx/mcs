@@ -1,0 +1,28 @@
+/* Author bio include styles */
+        .author {
+            display: flex;
+            margin-bottom: 2%;
+        }
+
+        .avatar {
+            border-radius: 50%;
+            border: 3px black solid;
+            height: 80px;
+            width: 80px;
+        }
+
+        .icons {
+            display: flex;
+        }
+
+        .icon {
+            margin-left: 5px;
+            height: 30px;
+            width: 30px;
+        }
+
+        .bio {
+            display: block;
+            margin-left: 3%;
+            margin-top: 0;
+        }

@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  {% if page.date %}
+  <p>publié le {{ page.date | date: "%d/%m/%Y, à %R" }}</p>
+  {% endif %} {% if page.refs %}
+  <p>sources/references: {{ page.refs }}</p>
+  {% endif %} {% if page.author %} {% include author_bio.html %} {% endif %} {%
+  if site.github.is_project_page %}
+  <span class="site-footer-owner"
+    ><a href="{{ site.github.repository_url }}"
+      >{{ site.github.repository_name }}</a
+    >
+    est maintenu par ©
+    <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>,
+    2021.</span
+  >
+  {% endif %}
+  <span class="site-footer-credits"
+    >Cette page <a href="https://jekyllrb.com/">Jekyll</a> est alimentée par
+    <a href="https://pages.github.com">GitHub Pages</a>.</span
+  >
+</footer>

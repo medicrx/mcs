@@ -1,6 +1,10 @@
 ---
+layout: null
 ---
 @import '{{ site.theme }}' ;
+@import "author_bio";
+@import "search";
+@import "navigation";
 @import "main";
 @import "premonition";
 

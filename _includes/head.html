@@ -1,0 +1,72 @@
+<head>
+  <title>{{ page.title | default: site.title }}</title>
+  <meta charset="UTF-8" />
+  <meta
+    name="keywords"
+    content="{{ page.keywords | default: site.keywords }}" />
+  <!-- PWA -->
+  <link
+    rel="manifest"
+    href="{{ '/manifest.json?v=' | append: site.github.build_revision | relative_url }}" />
+  <!-- insert favicons by favicon generator-->
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="{{ '/assets/images/apple-touch-icon.png?v=' | append: site.github.build_revision | relative_url }}" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="{{ '/assets/images/favicon-32x32.png?v=' | append: site.github.build_revision | relative_url }}" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="{{ '/assets/images/favicon-16x16.png?v=' | append: site.github.build_revision | relative_url }}" />
+  <link
+    rel="shortcut icon"
+    href="{{ '/assets/images/favicon.ico?v=' | append: site.github.build_revision | relative_url }}" />
+  <meta
+    name="msapplication-TileColor"
+    content="#157878" />
+  <meta
+    name="msapplication-config"
+    content=" " />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+    rel="stylesheet" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1" />
+  <meta
+    name="theme-color"
+    content="#157878" />
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent" />
+  <!-- FontAwesome -->
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous" />
+  <!-- Styles -->
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/styles.css?v=' | append: site.github.build_revision | relative_url }}" />
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/jekyll-glossary_tooltip.css?v=' | append: site.github.build_revision | relative_url }}" />
+
+  <!-- Scripts -->
+  <script
+    type="text/javascript"
+    src="{{ '/assets/js/main.js?=' | append: site.github.build_revision | relative_url }}"></script>
+  <script
+    type="text/javascript"
+    src="{{ '/assets/js/search.js?=' | append: site.github.build_revision | relative_url }}"></script>
+  <script
+    type="text/javascript"
+    src="{{ '/assets/js/navigation.js?=' | append: site.github.build_revision | relative_url }}"></script>
+  {% include head-custom.html %} {% seo %}
+</head>

@@ -1,8 +1,4 @@
-
-
-
-
-  /* Main content */
+/* Main content */
   .main {
     margin-left: 200px; /* Same as the width of the sidenav */
     font-size: 20px; /* Increased text to enable scrolling */
@@ -63,7 +59,8 @@
     color: white;
   }
 
-
+.contribute{padding:1%; font-size: 1.2rem; border: 1px black solid; text-decoration: none; outline: none;  background: none; color: green;}
+.contribute:hover{text-decoration: none; background:green; color:white; border: 1px yellow solid;}
 
 
 
@@ -92,5 +89,3 @@
       float: none;
     }
   }
-
-

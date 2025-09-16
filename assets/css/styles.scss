@@ -2,9 +2,9 @@
 layout: null
 ---
 @import '{{ site.theme }}' ;
-@import "author_bio";
 @import "search";
-@import "navigation";
+@import "header";
 @import "main";
+@import "footer";
 @import "premonition";
 

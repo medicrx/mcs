@@ -28,7 +28,7 @@ group :jekyll_plugins do
   gem "jekyll-seo-tag"
   gem "jekyll-sitemap"
   gem "jekyll-glossary_tooltip"
-  gem "jekyll-spaceship"
+  gem "jekyll-spaceship", ">= 0.5.4"
   gem "premonition"
   gem "jekyll-target-blank"
   gem "jekyll-github-metadata"
@@ -45,4 +45,4 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "webrick", "~> 1.7"
 
 # Extras
-gem 'faraday-retry'
+gem 'faraday-retry', '>= 2.3.0'

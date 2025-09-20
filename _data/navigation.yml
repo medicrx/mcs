@@ -1,88 +1,118 @@
 - title: Accueil
   url: /
+  icon: fas fa-home
 
 - title: A Propos
   url: /about
+  icon: fas fa-info-circle
 
 - title: Auteurs
   url: /authors
+  icon: fas fa-user-md
 
 - title: Contributeurs
   url: /contributors
+  icon: fas fa-users
 
 - title: Tous les articles
   url: /cheatsheets
+  icon: fas fa-file-medical
 
 - title: Catégories
+  icon: fas fa-layer-group
   sublinks:
     - title: Cardiologie
       url: /cardiologie
+      icon: fas fa-heartbeat
 
     - title: Chirurgie Pédiatrique
       url: /chirurgiepediatrique
+      icon: fas fa-baby
 
     - title: Chirurgie Viscérale
       url: /chirurgieviscerale
+      icon: fas fa-cut
 
     - title: Dermatologie
       url: /dermatologie
+      icon: fas fa-hand-paper
 
     - title: Endocrinologie
       url: /endocrinologie
+      icon: fas fa-atom
 
     - title: Fondamentaux
       url: /fondamentaux
+      icon: fas fa-book-open
 
     - title: Généralités
       url: /généralités
+      icon: fas fa-clipboard-list
 
     - title: Gynécologie
       url: /gynecologie
+      icon: fas fa-venus
 
     - title: Hématologie
       url: /hematologie
+      icon: fas fa-tint
 
     - title: Hépato-gastro-entérologie
       url: /hepatogastroenterologie
+      icon: fas fa-stomach
 
     - title: Infectiologie
       url: /infectiologie
+      icon: fas fa-virus
 
     - title: MPR
       url: /mpr
+      icon: fas fa-dumbbell
 
     - title: Neurologie
       url: /neurologie
+      icon: fas fa-brain
 
     - title: Néphrologie
       url: /nephrologie
+      icon: fas fa-kidneys
 
     - title: Ophtalmologie
       url: /ophtalmologie
+      icon: fas fa-eye
 
     - title: ORL
       url: /orl
+      icon: fas fa-deaf
 
     - title: Pneumologie
       url: /pneumologie
+      icon: fas fa-lungs
 
     - title: Pédiatrie
       url: /pediatrie
+      icon: fas fa-child
 
-    - title: psychiatrie
+    - title: Psychiatrie
       url: /psychiatrie
+      icon: fas fa-head-side-virus
 
     - title: Rhumatologie
       url: /rhumatologie
+      icon: fas fa-bone
 
     - title: Thérapeutique
       url: /therapeutique
+      icon: fas fa-pills
 
     - title: Traumatologie
       url: /traumatologie
+      icon: fas fa-band-aid
 
     - title: Urgences et Réanimation
       url: /urgences-reanimation
+      icon: fas fa-ambulance
 
     - title: Urologie
       url: /urologie
+      icon: fas fa-male

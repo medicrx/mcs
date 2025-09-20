@@ -1,19 +1,22 @@
 <div>
-  <!-- Use any element to open the sidenav -->
-  <a
-    class="btn"
+  <!-- Floating menu button -->
+  <button
+    class="menu-btn"
+    id="menuBtn"
     onclick="toggleNav()"
-    >Menu</a
-  >
+    aria-label="Toggle menu">
+    <span class="hamburger"></span>
+  </button>
+
+  <!-- Backdrop overlay -->
+  <div
+    class="backdrop"
+    id="backdrop"
+    onclick="closeNav()"></div>
+
   <nav
     id="mySidenav"
     class="sidenav">
-    <a
-      href="javascript:void(0)"
-      class="closebtn"
-      onclick="toggleNav()"
-      >&times;</a
-    >
     <ul>
       {% assign links = site.data.navigation %} {% for link in links %} {%
       assign class = nil %} {% if page.url contains link.url %} {% assign class
@@ -23,7 +26,8 @@
           href="javascript:void(0)"
           class="dropdown-toggle"
           onclick="toggleDropdown(this)">
-          {{ link.title }}
+          <i class="{{ link.icon }}"></i>
+          <span>{{ link.title }}</span>
           <span
             id="caret"
             class="fa fa-caret-down"></span>
@@ -31,16 +35,20 @@
         <ul class="dropdown-menu">
           {% for sublink in link.sublinks %}
           <li class="ddm">
-            <a href="{{ site.baseurl }}{{ sublink.url }}"
-              >{{ sublink.title }}</a
-            >
+            <a href="{{ site.baseurl }}{{ sublink.url }}">
+              <i class="{{ sublink.icon }}"></i>
+              <span>{{ sublink.title }}</span>
+            </a>
           </li>
           {% endfor %}
         </ul>
       </li>
       {% else %}
       <li class="{{ class }}">
-        <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+        <a href="{{ site.baseurl }}{{ link.url }}">
+          <i class="{{ link.icon }}"></i>
+          <span>{{ link.title }}</span>
+        </a>
       </li>
       {% endif %} {% endfor %}
     </ul>

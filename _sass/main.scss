@@ -1,91 +1,109 @@
 /* Main content */
-  .main {
-    margin-left: 200px; /* Same as the width of the sidenav */
-    font-size: 20px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-  }
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  transition: filter 0.3s ease;
+}
 
+.main.blur {
+  filter: blur(2px);
+}
 
-  .wrapper
-  {
+.wrapper {
   display: block;
   justify-content: center;
   justify-self: center;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: yellowgreen;
+}
+
+.about {
+  font-size: 1.3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* The visit-button on index page */
+.visit-btn {
+  margin-top: 5%;
+  display: flex;
+  align-self: center;
+  max-width: fit-content;
+  margin-inline: auto;
+  padding: 1%;
+  font-size: 1.3rem;
+  border: 1px black solid;
+  text-decoration: none;
+  outline: none;
+  background: none;
+  color: green;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.visit-btn:hover {
+  text-decoration: none;
+  background: green;
+  color: white;
+}
+
+.contribute {
+  padding: 1%;
+  font-size: 1.2rem;
+  border: 1px black solid;
+  text-decoration: none;
+  outline: none;
+  background: none;
+  color: green;
+}
+
+.contribute:hover {
+  text-decoration: none;
+  background: green;
+  color: white;
+  border: 1px yellow solid;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+  .main {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
   }
 
-  .logo
-  {
-    width: 200px;
-    height: 200px;
+  .sidebar a {
+    float: left;
   }
 
-  a{
-    text-decoration: none;
+  div.content {
+    margin-left: 0;
   }
-  a:hover {
-    text-decoration: none;
-    color: yellowgreen;
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
   }
-
-
-  .about {
-    font-size: 1.3rem;
-  }
-
-      .hidden {
-        display: none;
-      }
-
-  /* The visit-button on index page */
-  .visit-btn {
-    margin-top: 5%;
-    display: flex;
-    align-self: center;
-    max-width: fit-content;
-    margin-inline: auto;
-    padding: 1%;
-    font-size: 1.3rem;
-    border: 1px black solid;
-    text-decoration: none;
-    outline: none;
-    background: none;
-    color: green;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-
-  .visit-btn:hover {
-    text-decoration: none;
-    background: green;
-    color: white;
-  }
-
-.contribute{padding:1%; font-size: 1.2rem; border: 1px black solid; text-decoration: none; outline: none;  background: none; color: green;}
-.contribute:hover{text-decoration: none; background:green; color:white; border: 1px yellow solid;}
-
-
-
-
-
-  /* Media queries below. handle bigger screens later */
-  @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-
-    .sidebar a {
-      float: left;
-    }
-
-    div.content {
-      margin-left: 0;
-    }
-  }
-
-  @media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
-  }
+}

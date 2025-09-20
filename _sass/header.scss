@@ -1,75 +1,243 @@
+/* Floating menu button */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  width: 5rem;
+  height: 5rem;
+  background: #111;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-btn:hover {
+  background: green;
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(0, 128, 0, 0.4);
+}
+
+.menu-btn .hamburger {
+  width: 20px;
+  height: 2px;
+  background: white;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.menu-btn .hamburger::before,
+.menu-btn .hamburger::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.menu-btn .hamburger::before {
+  top: -6px;
+}
+
+.menu-btn .hamburger::after {
+  top: 6px;
+}
+
+.menu-btn.active .hamburger {
+  background: transparent;
+}
+
+.menu-btn.active .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.menu-btn.active .hamburger::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Backdrop blur overlay */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* The side navigation menu */
 .sidenav {
-    height: 100%;
-    width: 0; /* starts 0 width - change with JavaScript */
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    margin-bottom: 30px;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 60px;
-    transition: 0.5s;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    border: 1px solid #ddd;
-    border-radius: 0 0 10px 10px;
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 80px;
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.sidenav.active {
+  width: 330px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #fff;
+  display: block;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.sidenav a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: rgba(0, 128, 0, 0.1);
+  transition: width 0.3s ease;
+}
+
+.sidenav a:hover::before {
+  width: 100%;
+}
+
+.sidenav a:hover {
+  color: #90EE90;
+  border-left-color: green;
+  padding-left: 30px;
+}
+
+.sidenav a.active {
+  background: rgba(0, 128, 0, 0.2);
+  border-left-color: green;
+  color: #90EE90;
+}
+
+/* Close button */
+.sidenav .closebtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.sidenav .closebtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ff6b6b;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-toggle {
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.dropdown-toggle:hover {
+  color: #90EE90;
+  border-left-color: green;
+  padding-left: 30px;
+}
+
+.dropdown-toggle #caret {
+  float: right;
+  margin-top: 2px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+  display: none;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid green;
+  margin-left: 20px;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu a {
+  color: #90EE90;
+  padding: 12px 25px;
+  font-size: 0.95rem;
+  border-left: none;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(0, 128, 0, 0.2);
+  padding-left: 30px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .sidenav.active {
+    width: 280px;
   }
 
-  /* The navigation menu links */
-  .sidenav a {
-    padding: 5%;
-    text-decoration: none;
-    font-size: 1.5rem;
-    color: #fff;
-    display: block;
-    transition: 0.3s;
+  .menu-btn {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidenav.active {
+    width: 100vw;
   }
 
-  .sidenav a.active {
-    background-color: green;
-    color: white;
+  .menu-btn {
+    top: 15px;
+    left: 15px;
+    width: 3rem;
+    height: 3rem;
   }
-
-  .sidenav a:hover:not(.active), .dropdown-btn:hover:not(.active) {
-    color: green;
-  }
-
-  /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 35px;
-    margin-left: 40px;
-  }
-
-  .sidenav ul {
-      list-style-type: none;
-  }
-
-  #navbar ul li a, .dropdown-toggle {
-      color: white;
-      padding: 14px 16px;
-      text-decoration: none;
-      display: inline-block;
-  }
-
-  .dropdown-menu {
-      display: none;
-      text-align: left;
-      position: absolute;
-      min-width: 50px;
-      z-index: 1;
-  }
-
-  #navbar .ddm a {
-      color: green;
-      padding: 14px 16px;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-  }
-
-
-  .dropdown-content a:hover {background-color: white;}
+}

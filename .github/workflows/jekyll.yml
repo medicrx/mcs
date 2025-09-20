@@ -26,8 +26,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2"
-          bundler-cache: true
-          cache-version: 1
+          bundler-cache: false
+          cache-version: 2
 
       - name: Setup Pages
         id: pages
@@ -36,10 +36,7 @@ jobs:
       - name: Install dependencies
         run: |
           bundle lock --add-platform x86_64-linux
-          bundle config set --local deployment 'true'
-          bundle config set --local without 'development test'
           bundle install --jobs 4 --retry 3
-        continue-on-error: false
 
       - name: Clean and build with Jekyll
         run: |

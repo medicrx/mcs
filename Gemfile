@@ -1,27 +1,17 @@
 source "https://rubygems.org"
-# Hello! This is where you manage which Jekyll version is used to run.
-# When you want to use a different version, change it below, save the
-# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
-#
-#     bundle exec jekyll serve
-#
-# This will help ensure the proper Jekyll version is running.
-# Happy Jekylling!
 
-# gem "jekyll", "~> 4.2.0"
-gem "github-pages", group: :jekyll_plugins, github: 'github/pages-gem', branch: 'master'
+# Use GitHub Pages gem
+gem "github-pages", group: :jekyll_plugins
+
+# Development gems
 gem 'dotenv', groups: [:development, :test]
+
+# Core dependencies (updated safely)
 gem 'jekyll-paginate'
-gem 'kramdown'
-gem 'pygments.rb'
+gem 'kramdown-parser-gfm' # Updated kramdown parser (GitHub uses this)
+# Removed pygments.rb - GitHub Pages uses rouge by default now
 
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
-# gem "minima", "~> 2.5"
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
-# gem "github-pages", group: :jekyll_plugins
-
-# If you have any plugins, put them here!
+# Jekyll plugins - ALL PRESERVED
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-pwa-workbox"
@@ -32,17 +22,20 @@ group :jekyll_plugins do
   gem "premonition"
   gem "jekyll-target-blank"
   gem "jekyll-github-metadata"
-  #gem "jekyll_picture_tag"
+  # gem "jekyll_picture_tag" # Uncomment if needed
 end
-# Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
-# and associated library.
+
+# Platform-specific gems
 platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", "~> 1.2"
+  gem "tzinfo", ">= 1", "< 3"
   gem "tzinfo-data"
 end
-# Performance-booster for watching directories on Windows
+
+# Performance booster for Windows
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+
+# Web server
 gem "webrick", "~> 1.7"
 
-# Extras
+# HTTP client
 gem 'faraday-retry'

@@ -38,44 +38,45 @@ a:hover {
   display: none;
 }
 
-/* The visit-button on index page */
-.visit-btn {
-  margin-top: 5%;
-  display: flex;
-  align-self: center;
-  max-width: fit-content;
-  margin-inline: auto;
-  padding: 1%;
-  font-size: 1.3rem;
-  border: 1px black solid;
+/* Modern button base */
+.visit-btn,
+.contribute {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-decoration: none;
-  outline: none;
-  background: none;
-  color: green;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+/* Visit button */
+.visit-btn {
+  background: linear-gradient(135deg, #2196f3, #1565c0);
 }
 
 .visit-btn:hover {
-  text-decoration: none;
-  background: green;
-  color: white;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(33, 150, 243, 0.4);
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
 }
 
+/* Contribute button */
 .contribute {
-  padding: 1%;
-  font-size: 1.2rem;
-  border: 1px black solid;
-  text-decoration: none;
-  outline: none;
-  background: none;
-  color: green;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
 }
 
 .contribute:hover {
-  text-decoration: none;
-  background: green;
-  color: white;
-  border: 1px yellow solid;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(76, 175, 80, 0.4);
+  background: linear-gradient(135deg, #66bb6a, #388e3c);
 }
 
 /* Media queries */

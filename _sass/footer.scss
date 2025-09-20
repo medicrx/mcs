@@ -1,28 +1,62 @@
-/* Author bio include styles */
-        .author {
-            display: flex;
-            margin-bottom: 2%;
-        }
+/* Author bio include styles - FontAwesome icons */
+.author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background: #fafafa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
 
-        .avatar {
-            border-radius: 50%;
-            border: 3px black solid;
-            height: 80px;
-            width: 80px;
-        }
+.avatar {
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .icons {
-            display: flex;
-        }
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
 
-        .icon {
-            margin-left: 5px;
-            height: 30px;
-            width: 30px;
-        }
+.bio {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
 
-        .bio {
-            display: block;
-            margin-left: 3%;
-            margin-top: 0;
-        }
+.icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 0.5rem;
+}
+
+/* Replace .icon with FontAwesome styling */
+.icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: #f0f0f0;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 16px;
+}
+
+.icons a:hover {
+    transform: scale(1.15);
+    background: #228B22;
+    color: white;
+}

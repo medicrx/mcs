@@ -13,46 +13,44 @@
     <img
       src="{{author.image}}"
       class="avatar"
-      alt="avatar" />&nbsp; {% else %}
+      alt="avatar" />
+    {% else %}
     <img
       src="{{'/assets/images/anon.png?v=' | append: site.github.build_revision | relative_url}}"
       class="avatar"
-      alt="avatar" />&nbsp; {% endif %}
+      alt="avatar" />
+    {% endif %}
+
     <div class="bio">
       {% if author.bio %}
       <p>{{ author.bio }}</p>
       {% else %}
       <p>Aucune bio fournie</p>
       {% endif %}
+
       <div class="icons">
         {% if author.github %}
-        <a href="https://github.com/{{author.github}}">
-          <img
-            class="icon"
-            src="{{ '/assets/images/github_icon.png?v=' | append: site.github.build_revision | relative_url }}"
-            alt="github_icon"
-        /></a>
+        <a
+          href="https://github.com/{{author.github}}"
+          target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
         {% endif %} {% if author.email %}
         <a href="mailto:{{author.email}}">
-          <img
-            class="icon"
-            src="{{ '/assets/images/mail_icon.png?v=' | append: site.github.build_revision | relative_url }}"
-            alt="mail_icon"
-        /></a>
+          <i class="fas fa-envelope"></i>
+        </a>
         {% endif %} {% if author.twitter %}
-        <a href="https://twitter.com/{{author.twitter}}">
-          <img
-            class="icon"
-            src="{{ '/assets/images/twitter_icon.png?v=' | append: site.github.build_revision | relative_url }}"
-            alt="twitter_icon"
-        /></a>
+        <a
+          href="https://twitter.com/{{author.twitter}}"
+          target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
         {% endif %} {% if author.tel %}
-        <a href="https://wa.me/{{author.tel}}">
-          <img
-            class="icon"
-            src="{{ '/assets/images/whatsapp_icon.png?v=' | append: site.github.build_revision | relative_url }}"
-            alt="whatsapp_icon"
-        /></a>
+        <a
+          href="https://wa.me/{{author.tel}}"
+          target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
         {% endif %}
       </div>
     </div>

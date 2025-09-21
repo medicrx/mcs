@@ -1,8 +1,45 @@
-/* Main content */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap');
+
+:root {
+  --primary-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --serif-font: 'Source Serif Pro', Georgia, serif;
+  --text-color: #2c3e50;
+  --text-light: #5a6c7d;
+  --bg-color: #fafbfc;
+  --accent-color: #228B22;
+  --reading-width: 65ch;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--primary-font);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-color);
+  margin: 1.5em 0 0.75em 0;
+}
+
+h1 { font-size: 2.25rem; font-weight: 700; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
 .main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  font-size: 20px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+  margin-left: 200px;
+  padding: 2rem 3rem;
+  max-width: calc(var(--reading-width) + 6rem);
+  font-size: 1.125rem;
+  line-height: 1.7;
   transition: filter 0.3s ease;
 }
 
@@ -10,42 +47,52 @@
   filter: blur(2px);
 }
 
-.wrapper {
-  display: block;
-  justify-content: center;
-  justify-self: center;
-}
-
-.logo {
-  width: 200px;
-  height: 200px;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-  color: yellowgreen;
+.main p {
+  margin-bottom: 1.25rem;
+  max-width: var(--reading-width);
 }
 
 .about {
-  font-size: 1.3rem;
+  font-family: var(--serif-font);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  max-width: var(--reading-width);
 }
 
-.hidden {
-  display: none;
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/* Modern button base */
-.visit-btn,
-.contribute {
+a:hover {
+  color: #32CD32;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.wrapper {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  width: clamp(150px, 20vw, 200px);
+  height: clamp(150px, 20vw, 200px);
+  object-fit: contain;
+}
+
+.visit-btn, .contribute {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 20px auto;
-  padding: 12px 24px;
+  margin: 24px auto;
+  padding: 14px 28px;
+  font-family: var(--primary-font);
   font-size: 1.1rem;
   font-weight: 600;
   border: none;
@@ -57,7 +104,6 @@ a:hover {
   color: #fff;
 }
 
-/* Visit button */
 .visit-btn {
   background: linear-gradient(135deg, #2196f3, #1565c0);
 }
@@ -66,9 +112,10 @@ a:hover {
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 6px 18px rgba(33, 150, 243, 0.4);
   background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  text-decoration: none;
+  color: #fff;
 }
 
-/* Contribute button */
 .contribute {
   background: linear-gradient(135deg, #4caf50, #2e7d32);
 }
@@ -77,34 +124,68 @@ a:hover {
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 6px 18px rgba(76, 175, 80, 0.4);
   background: linear-gradient(135deg, #66bb6a, #388e3c);
+  text-decoration: none;
+  color: #fff;
 }
 
-/* Media queries */
+ul, ol {
+  max-width: var(--reading-width);
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Code and technical content */
+code, pre {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+  font-size: 0.9em;
+}
+
 @media screen and (max-width: 768px) {
   .main {
     margin-left: 0;
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
   }
-}
 
-@media screen and (max-width: 700px) {
-  .sidebar {
+  .about {
+    font-size: 1.1rem;
+  }
+
+  h1 { font-size: 1.875rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+
+  .visit-btn, .contribute {
     width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  .sidebar a {
-    float: left;
-  }
-
-  div.content {
-    margin-left: 0;
+    max-width: 300px;
+    font-size: 1rem;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
+@media screen and (max-width: 480px) {
+  .main {
+    padding: 1rem 0.75rem;
   }
+
+  .wrapper {
+    padding: 0 0.5rem;
+  }
+
+  .about {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .main {
+    padding: 2.5rem 4rem;
+  }
+}
+
+.hidden {
+  display: none;
 }

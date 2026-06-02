@@ -10,11 +10,11 @@ window.addEventListener('load', function() {
         var firstScript = document.getElementsByTagName('script')[0];
         script.async = true;
         script.src = '{{'sw-register.js'|relative_url}}?v=' + Date.now();
-        
+
         if (firstScript && firstScript.parentNode) {
             firstScript.parentNode.insertBefore(script, firstScript);
         }
-        
+
         // Register service worker if supported
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('./service-worker.js', { scope: '.' })

@@ -5,36 +5,40 @@
     name="keywords"
     content="{{ page.keywords | default: site.keywords }}" />
   <!-- PWA -->
+  {% assign rev = site.github.build_revision | default: site.version %}
   <link
     rel="manifest"
-    href="{{ '/manifest.json?v=' | append: site.github.build_revision | relative_url }}" />
+    href="{{ '/manifest.json?v=' | append: rev | relative_url }}" />
   <!-- insert favicons by favicon generator-->
   <link
     rel="apple-touch-icon"
     sizes="180x180"
-    href="{{ '/assets/images/apple-touch-icon.png?v=' | append: site.github.build_revision | relative_url }}" />
+    href="{{ '/assets/images/apple-touch-icon.png?v=' | append: rev | relative_url }}" />
   <link
     rel="icon"
     type="image/png"
     sizes="32x32"
-    href="{{ '/assets/images/favicon-32x32.png?v=' | append: site.github.build_revision | relative_url }}" />
+    href="{{ '/assets/images/favicon-32x32.png?v=' | append: rev | relative_url }}" />
   <link
     rel="icon"
     type="image/png"
     sizes="16x16"
-    href="{{ '/assets/images/favicon-16x16.png?v=' | append: site.github.build_revision | relative_url }}" />
+    href="{{ '/assets/images/favicon-16x16.png?v=' | append: rev | relative_url }}" />
   <link
     rel="shortcut icon"
-    href="{{ '/assets/images/favicon.ico?v=' | append: site.github.build_revision | relative_url }}" />
+    href="{{ '/assets/images/favicon.ico?v=' | append: rev | relative_url }}" />
   <meta
     name="msapplication-TileColor"
     content="#157878" />
   <meta
     name="msapplication-config"
     content=" " />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap"
     rel="stylesheet" />
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1" />
@@ -51,20 +55,21 @@
   <!-- Styles -->
   <link
     rel="stylesheet"
-    href="{{ '/assets/css/styles.css?v=' | append: site.github.build_revision | relative_url }}" />
+    href="{{ '/assets/css/styles.css?v=' | append: rev | relative_url }}" />
   <link
     rel="stylesheet"
-    href="{{ '/assets/css/jekyll-glossary_tooltip.css?v=' | append: site.github.build_revision | relative_url }}" />
+    href="{{ '/assets/css/jekyll-glossary_tooltip.css?v=' | append: rev | relative_url }}" />
 
   <!-- Scripts -->
   <script
     type="text/javascript"
-    src="{{ '/assets/js/main.js?=' | append: site.github.build_revision | relative_url }}"></script>
+    src="{{ '/assets/js/main.js?v=' | append: rev | relative_url }}"></script>
   <script
     type="text/javascript"
-    src="{{ '/assets/js/search.js?=' | append: site.github.build_revision | relative_url }}"></script>
+    src="{{ '/assets/js/search.js?v=' | append: rev | relative_url }}"></script>
   <script
     type="text/javascript"
-    src="{{ '/assets/js/navigation.js?=' | append: site.github.build_revision | relative_url }}"></script>
+    src="{{ '/assets/js/navigation.js?v=' | append: rev | relative_url }}"></script>
+
   {% include head-custom.html %} {% seo %}
 </head>

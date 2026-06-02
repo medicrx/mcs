@@ -12,11 +12,18 @@ function openNav() {
   let sidenav = document.getElementById("mySidenav");
   let backdrop = document.getElementById("backdrop");
   let menuBtn = document.getElementById("menuBtn");
+  let menuIcon = document.getElementById("menuIcon");
   let main = document.querySelector(".main");
 
   sidenav.classList.add("active");
   backdrop.classList.add("active");
-  menuBtn.classList.add("active");
+  if (menuBtn) {
+    menuBtn.classList.add("active");
+  }
+  if (menuIcon) {
+    menuIcon.classList.remove("fa-bars");
+    menuIcon.classList.add("fa-times");
+  }
   if (main) main.classList.add("blur");
   document.body.style.overflow = "hidden";
 }
@@ -25,14 +32,22 @@ function closeNav() {
   let sidenav = document.getElementById("mySidenav");
   let backdrop = document.getElementById("backdrop");
   let menuBtn = document.getElementById("menuBtn");
+  let menuIcon = document.getElementById("menuIcon");
   let main = document.querySelector(".main");
 
   sidenav.classList.remove("active");
   backdrop.classList.remove("active");
-  menuBtn.classList.remove("active");
+  if (menuBtn) {
+    menuBtn.classList.remove("active");
+  }
+  if (menuIcon) {
+    menuIcon.classList.remove("fa-times");
+    menuIcon.classList.add("fa-bars");
+  }
   if (main) main.classList.remove("blur");
   document.body.style.overflow = "";
 }
+
 
 function toggleDropdown(link) {
   let dropdown = link.nextElementSibling;

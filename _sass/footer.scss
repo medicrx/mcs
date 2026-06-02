@@ -57,6 +57,6 @@
 
 .icons a:hover {
     transform: scale(1.15);
-    background: #228B22;
+    background: var(--accent-color);
     color: white;
 }

@@ -1,11 +1,11 @@
-
 // set names for both precache & runtime cache
 workbox.core.setCacheNameDetails({
     prefix: 'mcs',
-    suffix: 'v1.1', // Updated version for cache invalidation
+    suffix: 'v1.2', // Updated version for cache invalidation
     precache: 'precache',
     runtime: 'runtime-cache'
 });
+
 
 // let Service Worker take control of pages ASAP
 workbox.core.skipWaiting();
@@ -27,14 +27,10 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
     /\.(?:js|css)$/,
     new workbox.strategies.CacheFirst({
-        cacheName: 'static-assets',
-        plugins: [{
-            cacheKeyWillBeUsed: async ({ request }) => {
-                return `${request.url}?v=${new Date().getTime()}`;
-            }
-        }]
+        cacheName: 'static-assets'
     })
 );
+
 
 // use `CacheFirst` strategy for images
 workbox.routing.registerRoute(

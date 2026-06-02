@@ -23,14 +23,20 @@
       </div>
     </div>
 
-    <nav
-      class="header-nav"
-      aria-label="Main navigation">
-      {% include navigation.html %}
-    </nav>
-
-    {% if site.github.is_project_page %}
     <div class="header-actions">
+      <a
+        class="btn btn-menu"
+        id="menuBtn"
+        onclick="toggleNav()"
+        aria-label="Open navigation menu">
+        <i
+          class="fas fa-bars"
+          id="menuIcon"
+          aria-hidden="true"></i>
+        <span>Menu</span>
+      </a>
+
+      {% if site.github.repository_url %}
       <a
         href="{{ site.github.repository_url }}"
         class="btn btn-github"
@@ -42,7 +48,9 @@
           aria-hidden="true"></i>
         <span>Voir sur GitHub</span>
       </a>
+      {% endif %}
     </div>
-    {% endif %}
   </div>
+
+  {% include navigation.html %}
 </header>

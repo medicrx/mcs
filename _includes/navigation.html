@@ -1,13 +1,4 @@
 <div>
-  <!-- Floating menu button -->
-  <button
-    class="menu-btn"
-    id="menuBtn"
-    onclick="toggleNav()"
-    aria-label="Toggle menu">
-    <span class="hamburger"></span>
-  </button>
-
   <!-- Backdrop overlay -->
   <div
     class="backdrop"
@@ -16,7 +7,22 @@
 
   <nav
     id="mySidenav"
-    class="sidenav">
+    class="sidenav"
+    aria-label="Navigation principale">
+    <div class="sidenav-header">
+      <div class="sidenav-title">
+        <strong>Navigation</strong>
+        <span>{{ site.title }}</span>
+      </div>
+      <button
+        type="button"
+        class="closebtn"
+        aria-label="Fermer le menu"
+        onclick="closeNav()">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+
     <ul>
       {% assign links = site.data.navigation %} {% for link in links %} {%
       assign class = nil %} {% if page.url contains link.url %} {% assign class
@@ -29,8 +35,7 @@
           <i class="{{ link.icon }}"></i>
           <span>{{ link.title }}</span>
           <span
-            id="caret"
-            class="fa fa-caret-down"></span>
+            class="caret fa fa-caret-down"></span>
         </a>
         <ul class="dropdown-menu">
           {% for sublink in link.sublinks %}

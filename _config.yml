@@ -74,7 +74,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-glossary_tooltip
   - jekyll-spaceship
-  - jekyll-language-plugin
   - jekyll-target-blank
   - jekyll-github-metadata
   - premonition
@@ -112,4 +111,3 @@ pwa:
   precache_glob_ignores: # Optional
     - "sw-register.js"
     - "fonts/**/*"
-

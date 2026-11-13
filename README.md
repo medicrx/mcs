@@ -18,8 +18,7 @@ Any contribution will be possible when license is added.
 
 The server will make the project available at: `http://127.0.0.1:4000/mcs/`
 
-**Important note**: As this is not a regular Jekyll setup but using `github-pages`plugin instead,
-you might have conflicts issues with your ruby version and the plugin versions (gh-pages now supports Ruby 3.x). Here is a workaround:
+**Important note**: As this is not a regular Jekyll setup but using `github-pages`plugin instead,you might have conflicts issues with your ruby version and the plugin versions (gh-pages now supports Ruby 3.x). Here is a workaround:
 
 - Use a ruby version manager (I chose [rbenv](https://github.com/rbenv/rbenv))
 - Switch to `ruby 3.0.2` (or your installed version) for this project
